@@ -6,12 +6,14 @@ import { Experience } from "@/components/portfolio/Experience";
 import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
 import { Education } from "@/components/portfolio/Education";
+import { Activities } from "@/components/portfolio/Activities";
+import { PersonalDetails } from "@/components/portfolio/PersonalDetails";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 
-const title = "Shubham Ranghar — Full-Stack Developer";
+const title = "Isha Ranghar — MCA Student";
 const description =
-  "Full-stack developer specializing in React, Node.js, and MongoDB — building complete applications from backend systems to responsive frontends.";
+  "Motivated and detail-oriented MCA student with foundational knowledge in programming, data structures, and software development. Quick learner with strong problem-solving abilities and a keen interest in Artificial Intelligence.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,6 +40,8 @@ function Index() {
         <Projects />
         <Experience />
         <Education />
+        <Activities />
+        <PersonalDetails />
         <Contact />
       </main>
       <Footer />

@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { GraduationCap } from "lucide-react";
+import { Trophy } from "lucide-react";
 import { Section } from "./Section";
-import { education } from "./data";
+import { extracurricular } from "./data";
 import { fadeUp, hoverLift, stagger, viewport } from "./motion";
 
-export function Education() {
+export function Activities() {
   return (
-    <Section id="education" eyebrow="04 — Education" title="Education">
+    <Section id="activities" eyebrow="05 — Activities" title="Extracurricular Activities">
       <motion.div
         variants={stagger}
         initial="hidden"
@@ -14,23 +14,18 @@ export function Education() {
         viewport={viewport}
         className="grid gap-4"
       >
-        {education.map((edu) => (
+        {extracurricular.map((activity) => (
           <motion.div
-            key={edu.degree}
+            key={activity}
             variants={fadeUp}
             whileHover={hoverLift}
             className="flex items-start gap-5 rounded-2xl p-7 glass hover-smooth sm:p-8"
           >
             <span className="rounded-xl bg-primary/12 p-3 text-primary">
-              <GraduationCap size={22} />
+              <Trophy size={22} />
             </span>
             <div>
-              <h3 className="text-xl font-semibold">{edu.degree}</h3>
-              <p className="mt-1 text-muted-foreground">{edu.school}</p>
-              <p className="mt-2 font-mono text-xs text-primary">{edu.period}</p>
-              {edu.details && (
-                <p className="mt-1 font-mono text-xs text-muted-foreground">{edu.details}</p>
-              )}
+              <p className="text-sm leading-relaxed text-muted-foreground">{activity}</p>
             </div>
           </motion.div>
         ))}

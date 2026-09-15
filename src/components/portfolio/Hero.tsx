@@ -10,8 +10,8 @@ const scrollTo = (id: string) =>
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
 const socialLinks = [
-  { href: profile.github, Icon: SiGithub, label: "GitHub" },
-  { href: profile.linkedin, Icon: SiLinkedin, label: "LinkedIn" },
+  ...(profile.github ? [{ href: profile.github, Icon: SiGithub, label: "GitHub" }] : []),
+  ...(profile.linkedin ? [{ href: profile.linkedin, Icon: SiLinkedin, label: "LinkedIn" }] : []),
   { href: `mailto:${profile.email}`, Icon: Mail, label: "Email" },
 ];
 
@@ -53,7 +53,7 @@ export function Hero() {
             </span>
             <span className="text-foreground">hi, I&apos;m</span>
             <br />
-            <span className="text-primary">Shubham</span>
+            <span className="text-primary">Isha</span>
             <motion.span
               animate={{ opacity: [1, 1, 0, 0] }}
               transition={{ duration: 1, repeat: Infinity, times: [0, 0.49, 0.5, 1] }}
@@ -66,20 +66,14 @@ export function Hero() {
             variants={fadeUp}
             className="mt-5 font-mono text-sm text-muted-foreground sm:text-base"
           >
-            Full-Stack Developer | React.js &amp; Node.js | Rishikesh → Remote
+            MCA Student | Dehradun
           </motion.p>
 
           <motion.p
             variants={fadeUp}
             className="mt-6 max-w-xl font-sans text-base leading-relaxed text-muted-foreground sm:text-[1.05rem]"
           >
-            I&apos;m a{" "}
-            <span className="text-primary">full-stack developer</span> building real projects with
-            React and Node.js. Currently interning at a{" "}
-            <span className="text-primary">Delhi-based Web3 studio</span>, working on live client
-            products. My recent project,{" "}
-            <span className="text-primary">LinguaLens</span>, is a Chrome extension for real-time
-            translation across 17 languages.
+            {profile.tagline}
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-9 flex flex-wrap items-center gap-3">

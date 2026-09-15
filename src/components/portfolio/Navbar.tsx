@@ -69,7 +69,7 @@ export function Navbar() {
             <span className="relative inline-flex size-2 rounded-full bg-primary" />
           </span>
           <span>
-            SHUBHAM<span className="text-primary">.</span>
+            ISHA<span className="text-primary">.</span>
           </span>
         </button>
 

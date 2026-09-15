@@ -190,8 +190,8 @@ export function Contact() {
           </a>
           <div className="flex gap-3">
             {[
-              { href: profile.github, Icon: SiGithub, label: "GitHub" },
-              { href: profile.linkedin, Icon: SiLinkedin, label: "LinkedIn" },
+              ...(profile.github ? [{ href: profile.github, Icon: SiGithub, label: "GitHub" }] : []),
+              ...(profile.linkedin ? [{ href: profile.linkedin, Icon: SiLinkedin, label: "LinkedIn" }] : []),
             ].map(({ href, Icon, label }) => (
               <motion.a
                 key={label}

@@ -102,7 +102,7 @@ export function Experience() {
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <h3 className="text-xl font-semibold sm:text-2xl">{e.role}</h3>
                   <span className="font-mono text-xs text-muted-foreground">
-                    {e.period} · {e.mode}
+                    {e.period}{e.mode && ` · ${e.mode}`}
                   </span>
                 </div>
                 <p className="mt-1 text-primary">{e.company}</p>

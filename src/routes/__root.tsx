@@ -73,18 +73,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Shubham Ranghar — Full-Stack Developer" },
+      { title: "Isha Ranghar — MCA Student" },
       {
         name: "description",
         content:
-          "Full-stack developer specializing in React, Node.js, and MongoDB — building complete applications from backend systems to responsive frontends.",
+          "Motivated and detail-oriented MCA student with foundational knowledge in programming, data structures, and software development. Quick learner with strong problem-solving abilities and a keen interest in Artificial Intelligence.",
       },
-      { name: "author", content: "Shubham Ranghar" },
-      { property: "og:title", content: "Shubham Ranghar — Full-Stack Developer" },
+      { name: "author", content: "Isha Ranghar" },
+      { property: "og:title", content: "Isha Ranghar — MCA Student" },
       {
         property: "og:description",
         content:
-          "Full-stack developer specializing in React, Node.js, and MongoDB — building complete applications from backend systems to responsive frontends.",
+          "Motivated and detail-oriented MCA student with foundational knowledge in programming, data structures, and software development. Quick learner with strong problem-solving abilities and a keen interest in Artificial Intelligence.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

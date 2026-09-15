@@ -17,17 +17,17 @@ const SUGGESTIONS = [
 
 const RESPONSES: Record<string, string> = {
   "what is your stack?":
-    "I work across the full stack with JavaScript (ES6+), TypeScript, React.js, Node.js, and Express.js on the backend. For data I use MongoDB and Supabase. On the frontend I reach for Tailwind CSS, Socket.IO for real-time features, and JWT for auth. Day-to-day tooling includes Git/GitHub, Postman, and Cloudinary.",
+    "I work with Java, C, Python, HTML, MySQL, and PHP. I also have experience with MS Office tools (Word, Excel, PowerPoint). I'm continuously learning and expanding my technical skills.",
   "are you available for hire?":
-    "Yes — I'm available immediately and open to full-time roles, internships, and contract work. I'm based in Rishikesh and comfortable working remotely with teams anywhere.",
+    "Yes — I'm an MCA student at DIT University, Dehradun (2025-2027). I'm open to internships and learning opportunities to apply my programming and problem-solving skills.",
   "tell me about a recent project":
-    "LinguaLens is my latest shipped project — an AI-powered Chrome extension for real-time translation across 17 languages. It uses React 19, TypeScript, and Tailwind CSS with a Shadow DOM floating UI, a translation pipeline with caching, and an LLM fallback for grammar correction and Hinglish support. It's live on the Chrome Web Store.",
+    "My recent projects include a Game Store Management System using PHP and MySQL with a team of 4, a Traffic Light Simulation in Java using OOP concepts, and a Salary Prediction model using Python with Linear Regression and Scikit-learn.",
   "what are you currently working on?":
-    "I'm a Software Development Intern at Quon Labs (OPC) Pvt. Ltd., a Delhi-based Web3 studio. I contribute to live client products — building features and fixing bugs on production React.js and Node.js applications alongside a senior engineering team.",
+    "I'm currently pursuing my Master of Computer Applications (MCA) at DIT University. I previously worked as a Fraud Analyst at Walmart where I was promoted to Mentor for my performance.",
 };
 
 const DEFAULT_RESPONSE =
-  "Good question! I'm a full-stack developer focused on React, Node.js, and MongoDB. Ask about my stack, availability, current work, or LinguaLens — or reach out directly via the contact section.";
+  "Good question! I'm an MCA student with skills in Java, C, Python, and web development. Ask about my skills, projects, education, or experience — or reach out directly via the contact section."
 
 function normalizeQuestion(input: string) {
   return input.trim().toLowerCase().replace(/[?!.]+$/, "");
@@ -46,7 +46,7 @@ function getResponse(question: string) {
     return RESPONSES["are you available for hire?"];
   if (key.includes("project") || key.includes("lingualens"))
     return RESPONSES["tell me about a recent project"];
-  if (key.includes("work") || key.includes("intern") || key.includes("quon"))
+  if (key.includes("work") || key.includes("intern") || key.includes("walmart"))
     return RESPONSES["what are you currently working on?"];
 
   return DEFAULT_RESPONSE;
@@ -172,7 +172,7 @@ export function AskMeTerminal() {
           <p className="text-muted-foreground">
             <span className="text-muted-foreground/70">{"// system"}</span>
             <br />
-            <span className="text-foreground">connected to shubham.dev — ask anything.</span>
+            <span className="text-foreground">connected to isha.dev — ask anything.</span>
           </p>
 
           {messages.map((m) => (
@@ -185,7 +185,7 @@ export function AskMeTerminal() {
                     m.role === "user" ? "text-muted-foreground" : "text-primary"
                   }`}
                 >
-                  {m.role === "user" ? "> you" : "> shubham-bot"}
+                  {m.role === "user" ? "> you" : "> isha-bot"}
                 </p>
                 <p
                   className={`inline-block max-w-[95%] rounded-lg px-3 py-2 text-left text-[11px] leading-relaxed sm:text-xs ${
@@ -206,7 +206,7 @@ export function AskMeTerminal() {
             {thinking && (
               <div className="text-left">
                 <p className="mb-1 text-[10px] uppercase tracking-wider text-primary">
-                  &gt; shubham-bot
+                  &gt; isha-bot
                 </p>
                 <p className="inline-flex items-center gap-1 rounded-lg bg-primary/8 px-3 py-2.5 text-primary">
                   {[0, 1, 2].map((i) => (
@@ -254,7 +254,7 @@ export function AskMeTerminal() {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="ask anything about shubham..."
+            placeholder="ask anything about isha..."
             disabled={busy}
             className="min-w-0 flex-1 bg-transparent font-mono text-[11px] text-foreground outline-none placeholder:text-muted-foreground/60 sm:text-xs"
           />
